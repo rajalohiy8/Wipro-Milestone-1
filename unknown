@@ -1,0 +1,28 @@
+int len=0;
+        int state=0; //0 for even and 1 odd
+        int cstate=0;
+        String result="";
+        while(len<input1.length()){ //passes
+            char ch=input1.charAt(len++);
+            int digit=Character.getNumericValue(ch);
+            if(digit%2==0)
+                state=0;
+            else
+                state=1;
+            cstate=0;
+            do{
+                if(len>=input1.length())
+                    break;
+                else{
+                digit+=Character.getNumericValue(input1.charAt(len++));
+                if(digit%2==0)
+                    cstate=0;
+                else
+                    cstate=1;
+                }
+            }while(cstate==state&&len<input1.length());
+                   result+=String.valueOf(digit);
+        }
+        return Integer.parseInt(result);
+    }
+}
