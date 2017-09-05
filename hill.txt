@@ -1,0 +1,21 @@
+ArrayList <Integer>arr=new ArrayList();
+arr.add(input2);
+int sz=input2;
+String str="*";
+for(int j=1;j<input1;j++)
+{
+ str=str+"#*";
+ arr.add(arr.get(j-1)+input3);
+for(int k=0;k<str.length();k++)
+{
+if(str.charAt(k)=='*')
+{
+sz+=arr.get(j);
+}
+else
+{
+sz+=arr.get(j-1);
+}
+}
+}
+return sz;
